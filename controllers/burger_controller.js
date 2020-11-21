@@ -2,28 +2,28 @@ const express = require("express");
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   burger.all(function(data) {
     const hbsObject = {
-      cats: data
+      burger: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
-router.post("/api/Burgers", function(req, res) {
-  burger.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+router.post("/api/burgers", function(req, res) {
+  burger.create(req.body.burger_name, function(result) {
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+    res.redirect("/");
   });
 });
 
-router.put("/api/Burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   const condition = "id = " + req.params.id;
 
   console.log("condition", condition);
