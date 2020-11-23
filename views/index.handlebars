@@ -1,10 +1,10 @@
 <h2>Eat-Da-Burger!</h2>
 <br>
 <br>
+
 {{#each burger}}
 <ul>
-  {{this.burger_name}}
-<button type="button" class="btn btn-warning change_burger_name" >Devour</button>
+  {{this.burger_name}} &nbsp; &nbsp; <button type="button" class="btn btn-warning change_burger_name" >Devour!</button>
 </ul>
 {{/each}}
 
@@ -14,7 +14,10 @@
 <br>
   <div class="form-group">
     <input type="text" id="ca" name="burger_name"><br>
-    <label>Enter a burger you want to eat, the Click the "Submit" button </label>
+    <label>Enter a burger you want to eat, then Click the "Submit" button </label>
   </div>
   <button type="submit" class="btn btn-warning">Submit</button>
 </form>
+<br>
+<br>
+<br>
