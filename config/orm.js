@@ -86,8 +86,22 @@ function objToSql(ob) {
         cb(result);
       });
     }
+
+
   };
-  
+
+
+
+//  var $studentDiv = $('div.divstudent').eq(0); 
+// //Add the two new <div> elements 
+// $studentDiv.after('<div>2</div><div>3</div>');
+// //Remove the class="divstudent"
+// $studentDiv.removeAttr('class');
+
+
+
+
+
 
 
 // Export the orm object for the model (burger.js)
