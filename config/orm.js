@@ -85,11 +85,28 @@ function objToSql(ob) {
   
         cb(result);
       });
+    },
+
+    
+    delete: function(table, objColVals, condition, cb) {
+      let queryString = "DELETE From " + table;
+  
+      queryString += " WHERE ";
+      queryString += condition;
+  
+      console.log(queryString);
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+  
+        cb(result);
+      });
     }
+    
 
 
   };
-
 
 
 //  var $studentDiv = $('div.divstudent').eq(0); 

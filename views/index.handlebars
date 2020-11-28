@@ -4,7 +4,7 @@
 
 {{#each burger}}
 <ul>
-  {{this.burger_name}} &nbsp; &nbsp; <button type="button" class="btn btn-warning change_burger_name" >Devour!</button>
+  {{this.burger_name}} &nbsp; &nbsp; <button type="button" class="btn btn-warning change_burger_name" id={this.burger_name} onclick=deleteBurger({this.burger_name})>Devour!</button>
 </ul>
 {{/each}}
 
@@ -26,3 +26,10 @@
 <br>
 <br>
 <br>
+
+<script>
+
+function deleteBurger(Yum) { 
+    alert(Yum);
+  }
+</script>
