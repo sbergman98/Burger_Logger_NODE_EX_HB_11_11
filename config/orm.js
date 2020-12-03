@@ -85,9 +85,40 @@ function objToSql(ob) {
   
         cb(result);
       });
-    }
-  };
+    },
+
+    
+    delete: function(table, objColVals, condition, cb) {
+      let queryString = "DELETE From " + table;
   
+      queryString += " WHERE ";
+      queryString += condition;
+  
+      console.log(queryString);
+      connection.query(queryString, function(err, result) {
+        if (err) {
+          throw err;
+        }
+  
+        cb(result);
+      });
+    }
+    
+
+
+  };
+
+
+//  var $studentDiv = $('div.divstudent').eq(0); 
+// //Add the two new <div> elements 
+// $studentDiv.after('<div>2</div><div>3</div>');
+// //Remove the class="divstudent"
+// $studentDiv.removeAttr('class');
+
+
+
+
+
 
 
 // Export the orm object for the model (burger.js)

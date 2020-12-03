@@ -44,5 +44,26 @@ router.put("/api/burgers/:id", function(req, res) {
   );
 });
 
+router.post("/api/devour", function(req, res) {
+  const condition = "burger_name = '"+ req.body.burger_name + "'";
+
+  console.log("condition", req.body.burger_name);
+
+  burger.delete(
+    {
+      devoured: req.body.devoured
+    },
+    condition,
+    function(result) {
+      
+      res.status(200).end();
+      
+
+    }
+  );
+});
+
+
+
 // Export routes for server.js to use.
 module.exports = router;

@@ -1,12 +1,19 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <h2>Eat-Da-Burger!</h2>
 <br>
 <br>
 
 {{#each burger}}
 <ul>
-  {{this.burger_name}} &nbsp; &nbsp; <button type="button" class="btn btn-warning change_burger_name" >Devour!</button>
+  {{this.burger_name}} &nbsp; &nbsp; <button type="button" class="btn btn-warning change_burger_name" id="{{this.burger_name}}" 
+  onclick="deleteBurger('{{this.burger_name}}')">Devour!</button>
 </ul>
 {{/each}}
+
+<div>
+
+</div>
+
 
 <form class="create-form" action="/api/burgers" method="POST">
 <br>
@@ -16,8 +23,28 @@
     <input type="text" id="ca" name="burger_name"><br>
     <label>Enter a burger you want to eat, then Click the "Submit" button </label>
   </div>
-  <button type="submit" class="btn btn-warning">Submit</button>
+  <button type="submit" class="btn btn-warning" id="bugerButton">Submit</button>
 </form>
 <br>
 <br>
 <br>
+
+<script>
+
+function deleteBurger(Yum) { 
+    $.ajax({
+          type:"post",
+          url:"api/devour",
+          data:{
+            "burger_name":Yum 
+          },
+          success:function(){
+            console.log('success');
+            location.reload();
+          },
+          error:function(){
+            console.log('error');
+          }
+        });
+  }
+</script>
