@@ -1,10 +1,12 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <h2>Eat-Da-Burger!</h2>
 <br>
 <br>
 
 {{#each burger}}
 <ul>
-  {{this.burger_name}} &nbsp; &nbsp; <button type="button" class="btn btn-warning change_burger_name" id={this.burger_name} onclick=deleteBurger({this.burger_name})>Devour!</button>
+  {{this.burger_name}} &nbsp; &nbsp; <button type="button" class="btn btn-warning change_burger_name" id="{{this.burger_name}}" 
+  onclick="deleteBurger('{{this.burger_name}}')">Devour!</button>
 </ul>
 {{/each}}
 
@@ -30,6 +32,19 @@
 <script>
 
 function deleteBurger(Yum) { 
-    alert(Yum);
+    $.ajax({
+          type:"post",
+          url:"api/devour",
+          data:{
+            "burger_name":Yum 
+          },
+          success:function(){
+            console.log('success');
+            location.reload();
+          },
+          error:function(){
+            console.log('error');
+          }
+        });
   }
 </script>
