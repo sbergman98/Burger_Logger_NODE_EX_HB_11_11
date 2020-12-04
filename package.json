@@ -1,0 +1,31 @@
+{
+  "name": "burger_logger_node_ex_hb_11_11",
+  "version": "1.0.0",
+  "description": "burger json",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "jquery": "^3.5.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "run now",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbergman98/Burger_Logger_NODE_EX_HB_11_11.git"
+  },
+  "keywords": [
+    "burger",
+    "logger"
+  ],
+  "author": "scott bergman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbergman98/Burger_Logger_NODE_EX_HB_11_11/issues"
+  },
+  "homepage": "https://github.com/sbergman98/Burger_Logger_NODE_EX_HB_11_11#readme"
+}
