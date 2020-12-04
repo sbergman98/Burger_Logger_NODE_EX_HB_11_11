@@ -29,9 +29,15 @@ connection.connect(function(err) {
     burger_name varchar(255) NOT NULL,
     devoured BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
-  ); `
+  ); `, function(err, result) {
+    if (err) {
+      throw err;
+    }
 
-  )
+    console.log(result);
+  });
+
+ 
   console.log("connected as id " + connection.threadId);
 });
 
