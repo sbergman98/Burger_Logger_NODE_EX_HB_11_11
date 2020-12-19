@@ -27,3 +27,7 @@ Created folder named views, added handlebars folders
 Added html to handlebars and CSS to create burger logger front end.
 
 Ran through several tests to make sure app add and then delteted burgers.
+
+I tried to add my filels to heroku but even with the instructor's help, we couldn't get it to work. He told me to make a demo video to at least show the app works.
+
+https://drive.google.com/file/d/1MfgSCiXT0ZJyAE2vxjNOra8NGsEUD4mq/view
